@@ -1,8 +1,15 @@
-#Object files
+# No extension files
+# or !*.c
+*
+!*.*
+
+# Object files
 *.o
 *.ko
 *.obj
 *.elf
+*.i
+*.s
 
 # Precompiled Headers
 *.gch
@@ -30,4 +37,3 @@
 
 # Debug files
 *.dSYM/
-
