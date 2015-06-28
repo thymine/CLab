@@ -6,6 +6,17 @@
 
 #include <stdio.h>
 
+void summary(int start, int end)
+{
+	int i;
+	int sum = 0;
+	for (i = start; i <= end; i++)
+	{
+		sum += i;
+	}
+	printf("%d+...+%d=%d\n", start, end, sum);
+}
+
 /**
  * f(n) = 1 + 1/2 + 1/3 + ... + 1/(n - 1) + 1/n
  * f(n) = 1 + 1/2 - 1/3 + ... - 1/(n - 1) + 1/n
@@ -23,5 +34,6 @@ int main()
 		sign = -sign;
 	}
 	printf("f(%d)=%f\n", n, sum);
+	summary(1, n);
     return 0;
 }
