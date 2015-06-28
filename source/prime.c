@@ -6,20 +6,7 @@
 
 #include <stdio.h>
 
-int isPrime(int x)
-{
-		int i;
-		int isPrime = 1; // x is a prime number
-		for (i = 2; i < x; i++)
-		{
-			if (x % i == 0)
-			{
-				isPrime = 0; // x is not a prime number
-				break;
-			}
-		}
-		return isPrime;
-}
+int isPrime(int x); // declaration
 
 int main()
 {
@@ -39,3 +26,19 @@ int main()
 	printf("\n");
     return 0;
 }
+
+int isPrime(int x) // definition
+{
+		int i;
+		int isPrime = 1; // x is a prime number
+		for (i = 2; i < x; i++)
+		{
+			if (x % i == 0)
+			{
+				isPrime = 0; // x is not a prime number
+				break;
+			}
+		}
+		return isPrime;
+}
+
