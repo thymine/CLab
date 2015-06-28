@@ -27,7 +27,7 @@ int main()
 		}
 		scanf("%d", &x);
 	}
-	for (i = 0; i < n; i++)
+	for (i = 0; i < sizeof(count) / sizeof(count[0]); i++)
 	{
 		printf("%d: %d\n", i, count[i]);
 	}
