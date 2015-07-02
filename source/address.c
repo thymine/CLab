@@ -27,6 +27,10 @@ void f(int *p)
 	printf("*p is %d, stored at %p\n", *p, p);
 	printf("p is %p, stored at %p\n", p, &p);
 	*p = *p + 1;
+
+	int k = 1;
+	int *t = &k;
+	printf("*t=%d, k=%d\n", t[0], k);
 }
 
 void g(int k)
