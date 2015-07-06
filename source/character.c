@@ -6,11 +6,28 @@
 
 #include <stdio.h>
 
+void f1();
+void f2();
+
 int main()
+{
+	f2();
+    return 0;
+}
+
+void f1()
 {
 	int i;
 	char c;
 	scanf("%d %c", &i, &c);
 	printf("i = %d, i = '%c', c = %d, c = '%c'\n", i, i, c, c);
-    return 0;
+}
+
+void f2()
+{
+	printf("张三\b李四\n");
+	printf("12345\t7890\n");
+	printf("123\t45678\n");
+	printf("1234567\t890\n");
+	printf("123\t456\n\r7890\n");
 }
