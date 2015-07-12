@@ -6,6 +6,8 @@
 
 #include <stdio.h>
 
+void f();
+
 int main()
 {
 	printf("Hello, "
@@ -18,5 +20,26 @@ int main()
 	printf("text=%s\n", text);
 	printf("p=%s\n", p);
 
+	char t[] = {'H', 'e', 'l', 'l', 'o', '\0'}; 
+	printf("t=%s\n", t);
+	char *s;
+	s = t;
+	t[2] = 'm';
+	printf("s=%s\n", s);
+
+	f();
     return 0;
+}
+
+void f()
+{
+	char p[10];
+	char t[10];
+	scanf("%9s", p);
+	scanf("%9s", t);
+	printf("p = %s\n", p);
+	printf("t = %s\n", t);
+
+	char *d = "";
+	printf("d = %s\n", d);
 }
