@@ -34,10 +34,13 @@ void p()
 	int a = 2;
 	p = &a;
 	printf("p -> a: p[0] = %d\n", p[0]);
-	int b[] = {1, 0, 2, 9, 8};
+	int b[] = {1, 3, 2, 9, 8};
 	p = b;
 	printf("p -> b: p[0] = %d\n", p[0]);
+	printf("*(++p) = %d\n", *(++p));
 	printf("*b = %d\n", *b);
+	// printf("*(++b) = %d\n", *(++b)); // Error! b == const p, maybe
+	printf("*(b + 1) = %d\n", *(b + 1)); // Equals to *(++p) 
 }
 
 void f()
