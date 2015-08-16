@@ -13,6 +13,9 @@ int main()
 
 	printf("%s\n", dst);
 	printf("%s\n", d);
+
+	// Don not forget to release dst
+	free(dst);
 	return 0;
 }
 
