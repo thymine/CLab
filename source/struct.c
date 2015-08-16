@@ -1,5 +1,13 @@
 #include "stdio.h"
 
+struct shape
+{
+	int width;
+	int height;
+};
+
+void buildShapeStruct(struct shape *s);
+
 int main(int argc, char const *argv[])
 {
 	/* 1 */
@@ -45,5 +53,19 @@ int main(int argc, char const *argv[])
 	struct color *p = &gray; // 获取结构gray的地址
 	printf("%p\n", p);
 
+	p->red = 255; // 使用指向gray的指针修改结构的成员red
+	printf("gray.red: %i\n", gray.red);
+
+	/* 5 */
+	struct shape s;
+	buildShapeStruct(&s);
+	printf("%i * %i\n", s.width, s.height);
+
 	return 0;
+}
+
+void buildShapeStruct(struct shape *s)
+{
+	scanf("%i", &s->width);
+	scanf("%i", &s->height);
 }
