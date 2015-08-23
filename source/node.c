@@ -38,7 +38,24 @@ int main(int argc, char const *argv[])
 	delete(&list, target);
 	print(&list);
 
+	/* 清空链表 */
+	printf("Clear List\n");
+	clear(&list);
+	// print(&list);
+
 	return 0;
+}
+
+void clear(List *list)
+{
+	Node *p, *q;
+	for (p = list->head; p; p = q) {
+		q = p->next;
+		printf("free\t");
+		free(p);
+		p = NULL;
+	}
+	printf("\n");
 }
 
 void delete(List *list, int target)
@@ -52,6 +69,7 @@ void delete(List *list, int target)
 				list->head = p->next;
 			}
 			free(p);
+			p = NULL;
 			break;
 		}
 	}

@@ -25,4 +25,7 @@ void find(List *list, int target);
 /* 移除指定节点 */
 void delete(List *list, int target);
 
+/* 清空链表 */
+void clear(List *list);
+
 #endif
