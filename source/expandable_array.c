@@ -5,13 +5,6 @@
 /* 动态增加空间单位大小 */
 const int BLOCK_SIZE = 20;
 
-// typedef struct 
-// {
-// 	int *array;
-// 	int size;
-// } Array;
-
-/* 创建Array结构 */
 Array array_create(int init_size)
 {
 	Array a;
@@ -21,7 +14,6 @@ Array array_create(int init_size)
 	return a;
 }
 
-/* 释放内存占用 */
 void array_free(Array *a)
 {
 	free(a->array);
@@ -29,33 +21,28 @@ void array_free(Array *a)
 	a->size = 0;
 }
 
-/* 返回数组大小 */
 int array_size(const Array *a)
 {
 	return a->size; // 封装，保护内部实现
 }
 
-/* 获取指定索引位置的值，返回指针 */
 int* array_at(Array *a, int index)
 {
 	check_size(a, index);
 	return &(a->array[index]);
 }
 
-/* 获取指定索引位置的值，返回值 */
 int array_get(const Array *a, int index)
 {
 	return a->array[index];
 }
 
-/* 赋值 */
 void array_set(Array *a, int index, int value)
 {
 	check_size(a, index);
 	a->array[index] = value;
 }
 
-/* 增大空间 */
 void array_inflate(Array *a, int more_size)
 {
 	/* 重新分配新的空间 */
