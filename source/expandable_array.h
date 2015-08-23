@@ -14,5 +14,6 @@ int* array_at(Array *a, int index);
 int array_get(const Array *a, int index);
 void array_set(Array *a, int index, int value);
 void array_inflate(Array *a, int more_size);
+void check_size(Array *a, int index);
 
 #endif
