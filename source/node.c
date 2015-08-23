@@ -8,6 +8,8 @@
 // 	struct _node *next;
 // } Node;
 
+void add(Node **pHead, int number);
+
 int main(int argc, char const *argv[])
 {
 	Node *head = NULL;
@@ -15,22 +17,27 @@ int main(int argc, char const *argv[])
 	do {
 		scanf("%d", &number);
 		if (number != -1) {
-			// add to linked list
-			Node *p = (Node*) (malloc(sizeof(Node)));
-			p->value = number;
-			p->next = NULL;
-			Node *last = head;
-			if (last != NULL) {
-				// find the last node
-				while (last->next) {
-					last = last->next;
-				}
-				// attach to it
-				last->next = p;
-			} else {
-				head = p;
-			}
+			add(&head, number);
 		}
 	} while (number != -1);
 	return 0;
+}
+
+void add(Node **pHead, int number) 
+{
+	// add to linked list
+	Node *p = (Node*) (malloc(sizeof(Node)));
+	p->value = number;
+	p->next = NULL;
+	Node *last = *pHead;
+	if (last != NULL) {
+		// find the last node
+		while (last->next) {
+			last = last->next;
+		}
+		// attach to it
+		last->next = p;
+	} else {
+		head = p;
+	}
 }
