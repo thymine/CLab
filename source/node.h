@@ -7,4 +7,12 @@ typedef struct _node
 	struct _node *next;
 } Node;
 
+typedef struct _list
+{
+	Node *head;
+	Node *tail;
+} List;
+
+void add(List *list, int number);
+
 #endif

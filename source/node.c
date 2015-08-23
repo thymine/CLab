@@ -8,28 +8,34 @@
 // 	struct _node *next;
 // } Node;
 
-void add(Node **pHead, int number);
+// typedef struct _list
+// {
+// 	Node *head;
+// 	Node *tail;
+// } List;
 
 int main(int argc, char const *argv[])
 {
-	Node *head = NULL;
+	List list;
+	list.head = NULL;
 	int number;
 	do {
 		scanf("%d", &number);
 		if (number != -1) {
-			add(&head, number);
+			add(&list, number);
 		}
 	} while (number != -1);
+
 	return 0;
 }
 
-void add(Node **pHead, int number) 
+void add(List *list, int number) 
 {
 	// add to linked list
 	Node *p = (Node*) (malloc(sizeof(Node)));
 	p->value = number;
 	p->next = NULL;
-	Node *last = *pHead;
+	Node *last = list->head;
 	if (last != NULL) {
 		// find the last node
 		while (last->next) {
@@ -38,6 +44,6 @@ void add(Node **pHead, int number)
 		// attach to it
 		last->next = p;
 	} else {
-		head = p;
+		list->head = p;
 	}
 }
