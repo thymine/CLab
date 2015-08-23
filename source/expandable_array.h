@@ -10,6 +10,9 @@ typedef struct
 /* 创建Array结构 */
 Array array_create(int init_size);
 
+/* 创建Array结构指针 */
+Array* array_new(int init_size);
+
 /* 释放内存占用 */
 void array_free(Array *a);
 

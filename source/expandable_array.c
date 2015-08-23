@@ -14,6 +14,14 @@ Array array_create(int init_size)
 	return a;
 }
 
+Array* array_new(int init_size)
+{
+	Array *a = (Array*) (malloc(sizeof(Array)));
+	a->array = (int*) (malloc(sizeof(int) * init_size));
+	a->size = init_size;
+	return a;
+}
+
 void array_free(Array *a)
 {
 	free(a->array);
@@ -70,27 +78,36 @@ void check_size(Array *a, int index)
 
 int main(int argc, char const *argv[])
 {
-	Array a = array_create(5);
+	// Array a = array_create(5);
 
-	printf("array size: %d\n", array_size(&a));
+	// printf("array size: %d\n", array_size(&a));
 
-	*array_at(&a, 0) = 10; // 赋值操作
-	printf("index of 0: %d\n", *array_at(&a, 0));
+	// *array_at(&a, 0) = 10; // 赋值操作
+	// printf("index of 0: %d\n", *array_at(&a, 0));
 
-	array_set(&a, 1, 11);
-	printf("index of 1: %d\n", array_get(&a, 1));
+	// array_set(&a, 1, 11);
+	// printf("index of 1: %d\n", array_get(&a, 1));
 
-	int number;
-	int cnt = 0;
-	while(number != -1) {
-		scanf("%d", &number);
-		if (number != -1)
-			array_set(&a, cnt, number);
-		printf("array size: %d\n", array_size(&a));
-		printf("index of %d: %d\n", cnt, array_get(&a, cnt));
-		cnt++;
-	}
+	// int number;
+	// int cnt = 0;
+	// while(number != -1) {
+	// 	scanf("%d", &number);
+	// 	if (number != -1)
+	// 		array_set(&a, cnt, number);
+	// 	printf("array size: %d\n", array_size(&a));
+	// 	printf("index of %d: %d\n", cnt, array_get(&a, cnt));
+	// 	cnt++;
+	// }
 
-	array_free(&a);
+	// array_free(&a);
+
+	Array *p = array_new(5);
+
+	printf("array size: %d\n", array_size(p));
+
+	array_set(p, 0, 3);
+	printf("index of 0: %d\n", array_get(p, 0));
+
+	array_free(p);
 	return 0;
 }
