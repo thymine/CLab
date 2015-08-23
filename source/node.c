@@ -31,10 +31,37 @@ int main(int argc, char const *argv[])
 
 	/* 查找元素 */
 	int target;
-	int isFound = 0;
 	scanf("%d", &target);
+	find(&list, target);
+
+	/* 删除节点 */
+	delete(&list, target);
+	print(&list);
+
+	return 0;
+}
+
+void delete(List *list, int target)
+{
+	Node *p, *q;
+	for (q = NULL, p = list->head; p; q = p, p = p->next) {
+		if (p->value == target) {
+			if (q != NULL) { 
+				q->next = p->next;
+			} else { // q为NULL，表示第一个节点需要删除，head需要指向第二个节点
+				list->head = p->next;
+			}
+			free(p);
+			break;
+		}
+	}
+}
+
+void find(List *list, int target) 
+{
+	int isFound = 0;
 	Node *p;
-	for (p = list.head; p; p = p->next) {
+	for (p = list->head; p; p = p->next) {
 		if (p->value == target) {
 			printf("Found!\n");
 			isFound = 1;
@@ -44,8 +71,6 @@ int main(int argc, char const *argv[])
 	if (!isFound) {
 		printf("Not found!\n");
 	}
-
-	return 0;
 }
 
 void print(List *list)

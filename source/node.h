@@ -19,4 +19,10 @@ void add(List *list, int number);
 /* 遍历打印链表值 */
 void print(List *list);
 
+/* 搜索链表 */
+void find(List *list, int target);
+
+/* 移除指定节点 */
+void delete(List *list, int target);
+
 #endif
