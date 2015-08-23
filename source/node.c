@@ -26,7 +26,35 @@ int main(int argc, char const *argv[])
 		}
 	} while (number != -1);
 
+	/* 遍历打印链表值 */
+	print(&list);
+
+	/* 查找元素 */
+	int target;
+	int isFound = 0;
+	scanf("%d", &target);
+	Node *p;
+	for (p = list.head; p; p = p->next) {
+		if (p->value == target) {
+			printf("Found!\n");
+			isFound = 1;
+			break;
+		}
+	}
+	if (!isFound) {
+		printf("Not found!\n");
+	}
+
 	return 0;
+}
+
+void print(List *list)
+{
+	Node *p;
+	for (p = list->head; p; p = p->next) {
+		printf("%d\t", p->value);
+	}
+	printf("\n");
 }
 
 void add(List *list, int number) 
