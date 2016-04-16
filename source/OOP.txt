@@ -1,0 +1,6 @@
+Abstraction
+Polymorphism
+Inheritance
+Encapsulation
+
+A PIE
