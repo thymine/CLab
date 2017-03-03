@@ -1,18 +1,5 @@
 .idea
 
-### ***************** .gitignore for C program *****************
-
-# Ignore workspace.xml
-.idea/workspace.xml
-
-# Ignore all 
-*
-# Unignore all with extensions
-!*.*
-# Unignore all dirs
-!*/
-### Above combination will ignore all files without extension ###
-
 # Object files
 *.o
 *.ko
@@ -55,8 +42,6 @@ __pycache__/
 *$py.class
 
 # C extensions
-*.so
-
 # Distribution / packaging
 .Python
 env/
