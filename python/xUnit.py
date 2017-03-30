@@ -51,6 +51,9 @@ class TestResult:
     def summary(self):
         return "%d run, %d failed" % (self.runCount, self.errorCount)
 
+    def addListener(self, listener):
+        pass
+
 
 class TestSuite:
     def __init__(self):
@@ -95,6 +98,18 @@ class TestCaseTest(TestCase):
         self.suite.add(WasRun("testBrokenMethod"))
         self.suite.run(self.result)
         assert ("2 run, 1 failed" == self.result.summary())
+
+
+class ResultListenerTest():
+    def testNotification(self):
+        self.count = 0
+        result = TestResult()
+        result.addListener(self)
+        WasRun("testMethod").run(result)
+        assert 1 == self.count
+
+    def startTest(self):
+        self.count += 1
 
 
 def main():
