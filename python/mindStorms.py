@@ -4,18 +4,23 @@ def main():
     window = turtle.Screen()
     window.bgcolor("red")
 
-    draw_square()
-    draw_circle()
-    draw_triangle()
+    brad = turtle.Turtle()  
+    brad.shape("turtle")
+    brad.color("yellow", "blue")
+    brad.speed(7)
+
+    step = 0
+    while (step < 36):
+        draw_square(brad)
+        brad.right(10)
+        step += 1
+    
+    # draw_circle()
+    # draw_triangle()
 
     window.exitonclick()
 
-def draw_square():
-    brad = turtle.Turtle()
-    brad.shape("turtle")
-    brad.color("yellow", "blue")
-    brad.speed(2)
-
+def draw_square(brad):
     for i in range(0, 4):
         brad.forward(100)
         brad.right(90)
