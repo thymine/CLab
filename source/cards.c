@@ -9,25 +9,35 @@
 int main()
 {
 	char card_name[3];
-	puts("Enter the card_name: ");
-	/* Enter two characters for the card name. */
-	scanf("%2s", card_name);
-	int val = 0;
-	if (card_name[0] == 'K') {
-		val = 10;
-	} else if (card_name[0] == 'Q') {
-		val = 10;
-	} else if (card_name[0] == 'J') {
-		val = 10;
-	} else if (card_name[0] == 'A') {
-		val = 1;
-	} else {
-		val = atoi(card_name);
-	}
-    if (val >= 3 && val <= 6) {
-        puts("计数增加");
-    } else if (val == 10) {
-        puts("计数减少");
-    }
+    int count = 0;
+	do {
+        puts("输入牌名：");
+    	scanf("%2s", card_name);
+	    int val = 0;
+        switch(card_name[0]) {
+            case 'J':
+            case 'Q':
+            case 'K':
+                val = 10;
+                break;
+            case 'A':
+                val = 11;
+                break;
+            case 'X':
+                continue;
+            default:
+                val = atoi(card_name);
+                if (val < 1 || val > 10) {
+                    puts("无法理解这个值");
+                    continue;
+                }
+        }
+        if (val > 2 && val < 7) {
+            count++;
+        } else if (val == 10) {
+            count--;
+        }
+        printf("当前的计数：%i\n", count);
+    } while (card_name[0] != 'X');
 	return 0;
 } 
