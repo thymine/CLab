@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+void fortune_cookie(char msg[])
+{
+    printf("Message reads: %s\n", msg);
+    printf("msg occupies %i bytes\n", sizeof(msg));
+}
+
 void test()
 {
     int x = 4;
@@ -11,6 +17,10 @@ void test()
 
     *address_of_x = 99;
     printf("New stored value: %i\n", x);
+
+    char quote[] = "Cookies make you fat";
+    printf("The quote stored in %p\n", quote);
+    fortune_cookie(quote);
 }
 
 void go_south_east(int *lat, int *lon)
@@ -26,6 +36,6 @@ int main()
     go_south_east(&latitude, &longitude);
     printf("Stop! Current location: [%i, %i]\n", latitude, longitude);
 
-    // test();
+    test();
     return 0;
 }
