@@ -14,6 +14,7 @@ void test()
     int *address_of_x = &x;
     int value_stored = *address_of_x;
     printf("Address of x: %p, value stored: %i\n", address_of_x, value_stored);
+    printf("Address of pointer: %p\n", &address_of_x);
 
     *address_of_x = 99;
     printf("New stored value: %i\n", x);
