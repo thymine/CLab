@@ -6,6 +6,21 @@ void fortune_cookie(char msg[])
     printf("msg occupies %i bytes\n", sizeof(msg));
 }
 
+void drinks()
+{
+    int drinks[] = {4, 2, 3};
+    printf("First drink %i\n", drinks[0]);
+    printf("Frist drink %i\n", *drinks);
+
+    printf("Third drink %i\n", drinks[2]);
+    printf("Third drink %i\n", *(drinks + 2));
+}
+
+void skip(const char *msg) 
+{
+    puts(msg + 6);
+}
+
 void test()
 {
     int x = 4;
@@ -21,7 +36,17 @@ void test()
 
     char quote[] = "Cookies make you fat";
     printf("The quote stored in %p\n", quote);
+    printf("quote length: %i\n", sizeof(quote));
+    int *p = quote;
+    int *q = p;
+    printf("q's address: %p\n", q);
+    // quote = q; // Error!
     fortune_cookie(quote);
+
+    drinks();
+
+    char *msg_from_amy = "Don't call me";
+    skip(msg_from_amy);
 }
 
 void go_south_east(int *lat, int *lon)
