@@ -32,7 +32,7 @@ void pointerAddress()
     printf("1[nums] = %i\n", 1[nums]);
 }
 
-void test()
+void testHub()
 {
     int x = 4;
     printf("x lives at %p\n", &x);
@@ -60,6 +60,27 @@ void test()
     skip(msg_from_amy);
 
     pointerAddress();
+}
+
+void userInput()
+{
+   char firstName[40];
+   char lastName[40];
+   printf("Enter your first and last name: ");
+   scanf("%39s %39s", firstName, lastName);
+
+   int age;
+   printf("\nEnter your age: ");
+   scanf("%i", &age);
+
+   printf("\nHi, %s %s! You are only %i years old.\n", firstName, lastName, age);
+}
+
+void test()
+{
+    // testHub();
+
+    userInput();
 }
 
 void go_south_east(int *lat, int *lon)
