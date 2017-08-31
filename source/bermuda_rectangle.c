@@ -79,9 +79,11 @@ void userInputScanf()
 void userInputFgets()
 {
     char food[5];
+    char *pFood = food;
     printf("Enter favorite food: ");
-    fgets(food, sizeof(food), stdin);
-    printf("\nYour favorite food is: %s\n", food);
+    // fgets(food, sizeof(food), stdin);
+    fgets(pFood, 5, stdin);
+    printf("\nYour favorite food is: %s\n", pFood);
 }
 
 void test()
