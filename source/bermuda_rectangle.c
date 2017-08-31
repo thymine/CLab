@@ -62,7 +62,7 @@ void testHub()
     pointerAddress();
 }
 
-void userInput()
+void userInputScanf()
 {
    char firstName[40];
    char lastName[40];
@@ -76,11 +76,21 @@ void userInput()
    printf("\nHi, %s %s! You are only %i years old.\n", firstName, lastName, age);
 }
 
+void userInputFgets()
+{
+    char food[5];
+    printf("Enter favorite food: ");
+    fgets(food, sizeof(food), stdin);
+    printf("\nYour favorite food is: %s\n", food);
+}
+
 void test()
 {
     // testHub();
 
-    userInput();
+    // userInputScanf();
+
+    userInputFgets();
 }
 
 void go_south_east(int *lat, int *lon)
