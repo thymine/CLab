@@ -26,6 +26,10 @@ void pointerAddress()
     int nums[] = {1, 2, 3};
     printf("nums' address: %p\n", nums);
     printf("(nums + 1)'s address: %p\n", nums + 1);
+    printf("nums[1] = %i\n", nums[1]);
+    printf("*(nums + 1) = %i\n", *(nums + 1));
+    printf("*(1 + nums) = %i\n", *(1 + nums));
+    printf("1[nums] = %i\n", 1[nums]);
 }
 
 void test()
