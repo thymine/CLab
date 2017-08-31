@@ -21,6 +21,13 @@ void skip(const char *msg)
     puts(msg + 6);
 }
 
+void pointerAddress() 
+{
+    int nums[] = {1, 2, 3};
+    printf("nums' address: %p\n", nums);
+    printf("(nums + 1)'s address: %p\n", nums + 1);
+}
+
 void test()
 {
     int x = 4;
@@ -47,6 +54,8 @@ void test()
 
     char *msg_from_amy = "Don't call me";
     skip(msg_from_amy);
+
+    pointerAddress();
 }
 
 void go_south_east(int *lat, int *lon)
