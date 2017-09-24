@@ -11,4 +11,9 @@ public:
 
 	// Return the area of this circle
 	double getArea();
+
+	// Inline function
+	double getRadius() {
+		return radius;
+	}
 };
