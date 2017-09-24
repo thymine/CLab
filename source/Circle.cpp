@@ -2,10 +2,6 @@
 
 using namespace std;
 
-int main() {
-    return 0;
-}
-
 class Circle {
 
 public:
@@ -28,3 +24,15 @@ public:
         return radius * radius * 3.14;
     }
 };
+
+int main() {
+    Circle circle1;
+    Circle circle2(5.0);
+
+    cout << "radius: " << circle1.radius << ", area: " << circle1.getArea() << endl;
+    cout << "radius: " << circle2.radius << ", area: " << circle2.getArea() << endl;
+
+    circle2.radius = 100.0;
+    cout << "radius: " << circle2.radius << ", area: " << circle2.getArea() << endl;
+    return 0;
+}
