@@ -34,5 +34,8 @@ int main() {
 
     circle2.radius = 100.0;
     cout << "radius: " << circle2.radius << ", area: " << circle2.getArea() << endl;
+
+    cout << "radius: " << 5 << ", area: " << Circle(5).getArea() << endl;
+
     return 0;
 }
